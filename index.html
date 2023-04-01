@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>llorellama</title>
+</head>
+<body>
+    <h1>Prompt</h1>
+    <div id="prompt_window">
+        <!-- Display chat messages here -->
+    </div>
+    <form method="post" action="http://localhost:3000/item">
+        <label for="item">Item:</label>
+        <input type="text" id="item" name="item" required>
+        <br>
+        <input type="submit" value="Send">
+    </form>
+    <smart-element id="testing">
+        <div id="main-container">
+            <h1>Welcome to Our Website!</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            
+            <ul class="navigation">
+              <li><a href="home.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+            <section class="content">
+              <article>
+                <h2>Article Title</h2>
+                <p>Article content...</p>
+              </article>
+              
+              <aside>
+                <h3>Related Links</h3>
+                <ul>
+                  <li><a href="link1.html">Link 1</a></li>
+                  <li><a href="link2.html">Link 2</a></li>
+                  <li><a href="link3.html">Link 3</a></li>
+                </ul>
+              </aside>
+            </section>
+          </div>
+    </smart-element>
+    <button id="improve-button">Click to test html transform</button>
+    <smart-element id="self-improve-block">
+        <div class="self-improve-block">
+            <div class="self-improve-block__title">
+                <h2 class="self-improve-block__title-text">Self-improve</h2>
+            </div>
+            <div class="self-improve-block__content">
+                <div class="self-improve-block__content-item">
+                    <div class="self-improve-block__content-item-title">
+                        <h3 class="self-improve-block__content-item-title-text">Learn</h3>
+                    </div>
+                    <div class="self-improve-block__content-item-content">
+                        <ul class="self-improve-block__content-item-content-list">
+                            <li class="self-improve-block__content-item-content-list-item">Learn to code</li>
+                            <li class="self-improve-block__content-item-content-list-item">Learn to code</li>
+                            <li class="self-improve-block__content-item-content-list-item">Learn to code</li>
+                            <li class="self-improve-block__content-item-content-list-item">Learn to code</li>
+                            <li class="self-improve-block__content-item-content-list-item">Learn to code</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="self-improve-block__content-item">
+                    <div class="self-improve-block__content-item-title">
+                        <h3 class="self-improve-block__content-item-title-text">Learn</h3>
+                    </div>
+                    <div class="self-improve-block__content-item-content">
+                        <ul class="self-improve-block__content-item-content-list">
+                            <li class="self-improve-block__content-item-content-list-item">Learn to code</li>
+                            <li class="self-improve-block__content-item-content-list-item">Learn to code</li>
+                            <li class="self-improve-block__content-item-content-list-item">Learn to code</li>
+                            <li class="self-improve-block__content-item-content-list-item">Learn to code</li>
+                            <li class="self-improve-block__content-item-content-list-item">Learn to code</li>
+                        </ul>
+                    </div>
+                </div>
+    </smart-element>
+    <script src="index.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

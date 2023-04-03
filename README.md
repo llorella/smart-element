@@ -1,6 +1,6 @@
 # Smart Element
 
-Smart Element is a web component that allows you to create a custom element that can be used in any web page. It leverages OpenAI's GPT-3.5-turbo to transform the content within the custom element based on user input. The project includes a server-side component for communicating with OpenAI's API and a client-side component for integrating the Smart Element into your web pages.
+smart-element is a Javascript library that allows you to create a custom element that can be used on any web page. It leverages OpenAI's GPT-3.5-turbo to transform content wrapped by the <smart-element> tag, with the ability to add user specifications. This is a small project I hacked together when I grew annoyed writing HTML for my personal website. It's mostly intended as a tool to use while designing webpages, and not for production. 
 
 ## Server Setup
 

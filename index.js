@@ -1,11 +1,9 @@
 class SmartElement extends HTMLElement {
   constructor(apiKey) {
     super();
-    this.apiKey = apiKey;
   }
 
   async improve(prompt) {
-    //use server endpoint for now because of node dependency openai
     const testHtml = this.innerHTML;
     try {
       const response = await fetch('/transform', {
@@ -37,29 +35,31 @@ class SmartElement extends HTMLElement {
       console.log("Input prompt:", prompt);
       console.log("Transformed HTML:", transformedHtml);
   
-      const previewContainer = document.getElementById("preview-container");
-      const preview = document.getElementById("preview");
-      const yesButton = document.getElementById("yes-button");
-      const noButton = document.getElementById("no-button");
+      const originalHtml = this.innerHTML;
+      this.innerHTML = transformedHtml;
+      this.insertAdjacentHTML('beforeend', `
+        <button id="accept-changes">Accept changes</button>
+        <button id="reject-changes">Reject changes</button>
+      `);
   
-      preview.innerHTML = transformedHtml;
-      previewContainer.style.display = "block";
-  
+      const acceptChangesButton = this.querySelector("#accept-changes");
+      const rejectChangesButton = this.querySelector("#reject-changes");
+
       return new Promise((resolve) => {
-        yesButton.onclick = () => {
-          previewContainer.style.display = "none";
-          this.innerHTML = transformedHtml;
+        acceptChangesButton.onclick = () => {
+          acceptChangesButton.remove();
+          rejectChangesButton.remove();
           resolve(true);
         };
   
-        noButton.onclick = () => {
-          previewContainer.style.display = "none";
+        rejectChangesButton.onclick = () => {
+          acceptChangesButton.remove();
+          rejectChangesButton.remove();
+          this.innerHTML = originalHtml;
           resolve(false);
         };
       });
     }
-  
-
 }
 
 customElements.define('smart-element', SmartElement);
